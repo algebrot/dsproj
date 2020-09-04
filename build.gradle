@@ -35,8 +35,4 @@ tasks.wrapper {
 }
 
 apply plugin: 'invariants-plugin'
-//daikonConfig {
-//    daikonInstallationPath.set("/Users/corac/daikon")
-////    daikonPattern.set("^com\\.example\\.getty\\.")
-//}
 

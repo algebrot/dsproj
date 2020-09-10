@@ -43,8 +43,16 @@ public class GStackTest extends TestCase {
 		assertEquals(gstack.peek(),"cat");
 	}
 
+	public void testMakeEmpty() {
+		gstack = new GStack(1);
+		gstack.push(2);
+		assertEquals(1, gstack.load());
+		gstack.makeEmpty();
+		assertEquals(0, gstack.load());
+	}
+
 	// TODO: should I include this test?
-	public void testPushAntiOverflow() {
+	/*public void testPushAntiOverflow() {
 		gstack = new GStack(4);
 		gstack.push(7);
 		gstack.push(8);
@@ -55,10 +63,10 @@ public class GStackTest extends TestCase {
 		gstack.push(11);
 		assertEquals(5, gstack.load());
 		assertEquals(11, gstack.peek());
-	}
+	}*/
 
 	// TODO: should I include this test?
-	public void testPopAntiUnderflow() {
+	/*public void testPopAntiUnderflow() {
 		gstack = new GStack(2);
 		gstack.push(9);
 		gstack.push(-2);
@@ -69,5 +77,5 @@ public class GStackTest extends TestCase {
 		gstack.pop();
 		assertEquals(0, gstack.load());
 		assertEquals(null, gstack.peek());
-	}
+	}*/
 }

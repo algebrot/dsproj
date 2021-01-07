@@ -1,27 +1,21 @@
 package com.example.getty;
 
-// GStack class
+// GStack class is an Array-based implementation of the stack.
 //
 // CONSTRUCTION: with or without a capacity; default is 8
 //
 // ******************PUBLIC OPERATIONS*********************
-// void push( x )         --> Insert x
-// void pop( )            --> Remove most recently inserted item
-// Object top( )          --> Return most recently inserted item
-// Object topAndPop( )    --> Return and remove most recently inserted item
-// boolean isEmpty( )     --> Return true if empty; else false
-// boolean isFull( )      --> Return true if full; else false
-// void makeEmpty( )      --> Remove all items
+// void push(x)         --> Insert x
+// void pop()           --> Remove most recently inserted item
+// Object peek()        --> Return most recently inserted item
+// boolean isEmpty()    --> Return true if empty; else false
+// boolean isFull()     --> Return true if full; else false
+// void makeEmpty()     --> Remove all items
+// void popUntil(x)     --> Remove items up until x
+//
 // ******************ERRORS********************************
 // Overflow and Underflow thrown as needed
 
-/**
- * Array-based implementation of the stack. Added functionalities and
- * restrictions for research purpose
- * 
- * @author Mark Allen Weiss
- * @author Yan Yan (yayan@cs.ucsd.edu)
- */
 public class GStack {
 
 	private Object[] internalArray;
@@ -79,10 +73,10 @@ public class GStack {
 	/**
 	 * Remove the most recently inserted item from the stack until a reaching a certain value.
 	 *
-	 * @param text the value to compare against and end removal.
+	 * @param x the value to compare against and end removal.
 	 */
-	public void popUntil(Object text) {
-		while(this.peek() != text){
+	public void popUntil(Object x) {
+		while(this.peek() != x){
 			this.pop();
 		}
 	}
@@ -103,7 +97,6 @@ public class GStack {
 
 	/**
 	 * Remove the most recently inserted item from the stack.
-	 * 
 	 */
 	public Object pop() {
 		error = false;
@@ -133,7 +126,6 @@ public class GStack {
 
 	/**
 	 * Get the current load (size) of the stack.
-	 * 
 	 */
 	public int load() {
 		return topIndex + 1;

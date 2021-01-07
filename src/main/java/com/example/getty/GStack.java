@@ -63,14 +63,6 @@ public class GStack {
 	}
 
 	/**
-	 * Make the stack logically empty.
-	 */
-	public void makeEmpty() {
-		java.util.Arrays.fill(internalArray, 0, topIndex + 1, null);
-		topIndex = -1;
-	}
-
-	/**
 	 * Remove the most recently inserted item from the stack until a reaching a certain value.
 	 *
 	 * @param x the value to compare against and end removal.
@@ -130,5 +122,4 @@ public class GStack {
 	public int load() {
 		return topIndex + 1;
 	}
-
 }

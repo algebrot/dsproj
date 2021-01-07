@@ -42,13 +42,4 @@ public class GStackTest extends TestCase {
 		gstack.popUntil("cat");
 		assertEquals(gstack.peek(),"cat");
 	}
-
-	public void testMakeEmpty() {
-		gstack = new GStack(1);
-		gstack.push(2);
-		assertEquals(1, gstack.load());
-		gstack.makeEmpty();
-		assertEquals(0, gstack.load());
-	}
-
 }
